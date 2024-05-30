@@ -1,13 +1,13 @@
 # chevetech
 
-Instalar o Ambiente Virtual
----
-python -m venv kivy_venv
-## No Windows:
-kivy_venv\Scripts\activate
+## Instalar o Ambiente Virtual e Dependências
+1- python -m venv kivy_venv
 
-## No macOS/Linux:
-source kivy_venv/bin/activate
+2- 
+**Windows:** kivy_venv\Scripts\activate
 
+ou
 
-pip install -r requirements.txt
+**Linux:** source kivy_venv/bin/activate
+
+3- pip install -r requirements.txt
