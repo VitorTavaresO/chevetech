@@ -1,0 +1,111 @@
+#:kivy 2.0.0
+
+MDScreen:
+    md_bg_color: 0.031, 0.059, 0.035
+
+    MDBoxLayout:
+        orientation: "vertical"
+
+        MDBoxLayout:
+            size_hint_y: None
+            height: dp(70)
+            md_bg_color: 0.275, 0.929, 0.329, 0.8
+            MDLabel:
+                text: "Chevete 1986"
+                halign: "center"
+                valign: "middle"
+                font_style: "Title"
+            MDLabel:
+                text: "16:23\n30/05/2024"
+                halign: "center"
+                valign: "middle"
+                font_style: "Title"
+
+        GridLayout:
+            cols: 3
+            spacing: "10dp"
+            padding: "10dp"
+            
+            AnchorLayout:
+                anchor_x: 'center'
+                anchor_y: 'center'
+                MDFabButton:
+                    icon: "spotify"
+                    theme_font_size: "Custom"
+                    font_size: "80sp"
+                    theme_bg_color: "Custom"
+                    text_color: 0, 0, 0
+                    md_bg_color: 0.275, 0.929, 0.329, 0.8
+                    size_hint: None, None
+                    size: "150dp", "150dp"
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            
+            AnchorLayout:
+                anchor_x: 'center'
+                anchor_y: 'center'
+                MDFabButton:
+                    icon: "youtube"
+                    theme_font_size: "Custom"
+                    font_size: "80sp"
+                    theme_bg_color: "Custom"
+                    text_color: 0, 0, 0
+                    md_bg_color: 0.275, 0.929, 0.329, 0.8
+                    size_hint: None, None
+                    size: "150dp", "150dp"
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+            AnchorLayout:
+                anchor_x: 'center'
+                anchor_y: 'center'
+                MDFabButton:
+                    icon: "bluetooth"
+                    theme_font_size: "Custom"
+                    font_size: "80sp"
+                    theme_bg_color: "Custom"
+                    text_color: 0, 0, 0
+                    md_bg_color: 0.275, 0.929, 0.329, 0.8
+                    size_hint: None, None
+                    size: "150dp", "150dp"
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+            AnchorLayout:
+                anchor_x: 'center'
+                anchor_y: 'center'
+                MDFabButton:
+                    icon: "engine"
+                    theme_font_size: "Custom"
+                    font_size: "80sp"
+                    theme_bg_color: "Custom"
+                    text_color: 0, 0, 0
+                    md_bg_color: 0.275, 0.929, 0.329, 0.8
+                    size_hint: None, None
+                    size: "150dp", "150dp"
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+            AnchorLayout:
+                anchor_x: 'center'
+                anchor_y: 'center'
+                MDFabButton:
+                    icon: "car-back"
+                    theme_font_size: "Custom"
+                    font_size: "80sp"
+                    theme_bg_color: "Custom"
+                    text_color: 0, 0, 0
+                    md_bg_color: 0.275, 0.929, 0.329, 0.8
+                    size_hint: None, None
+                    size: "150dp", "150dp"
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+            AnchorLayout:
+                anchor_x: 'center'
+                anchor_y: 'center'
+                MDFabButton:
+                    icon: "cog"
+                    theme_font_size: "Custom"
+                    font_size: "80sp"
+                    theme_bg_color: "Custom"
+                    text_color: 0, 0, 0
+                    md_bg_color: 0.275, 0.929, 0.329, 0.8
+                    size_hint: None, None
+                    size: "150dp", "150dp"
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
