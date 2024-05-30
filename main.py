@@ -1,8 +1,17 @@
 from kivy.lang import Builder
 from kivymd.app import MDApp
+from kivy.clock import Clock
+from datetime import datetime
 
 class App(MDApp):
     def build(self):
-        return Builder.load_file('interface.kv')
+        self.screen = Builder.load_file('interface.kv')
+        Clock.schedule_interval(self.update_time, 1)
+        return self.screen
+
+    def update_time(self, *args):
+        now = datetime.now()
+        current_time = now.strftime("%H:%M\n%d/%m/%Y")
+        self.screen.ids.datetime_label.text = current_time
 
 App().run()
