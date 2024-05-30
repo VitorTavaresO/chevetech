@@ -13,17 +13,21 @@ MDScreen:
             padding: "10dp"
 
             MDLabel:
+                id: car_label
                 text: "Chevete 1986"
                 font_style: "Title"
                 halign: "right"
                 size_hint_x: None
-                width: dp(450)
+                width: dp(455)
+                bold: True
             MDLabel:
-                text: "16:23\n30/05/2024"
+                id: datetime_label
+                text: ""
                 font_style: "Title"
                 halign: "center"
                 size_hint_x: None
                 width: dp(550)
+                bold: True
 
         GridLayout:
             cols: 3
