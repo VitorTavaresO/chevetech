@@ -2,7 +2,8 @@
 
 # Instalar o Ambiente Virtual e Dependências
 
-# Windows
+**Windows**
+
 1 - python -m venv kivy_venv
 
 2 - kivy_venv\Scripts\activate
@@ -11,7 +12,8 @@
 
 4 - pip install -r requirements.txt
 
-# Linux
+---
+**Linux**
 
 1 - python -m venv kivy_venv
 
