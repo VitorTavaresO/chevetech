@@ -8,8 +8,6 @@ python -m venv kivy_venv
 
 kivy_venv\Scripts\activate
 
-pip install https://github.com/kivymd/KivyMD/archive/master.zip
-
 pip install -r requirements.txt
 ```
 **Linux**
