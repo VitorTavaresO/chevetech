@@ -1,35 +1,25 @@
 #:kivy 2.0.0
-
 MDScreen:
-    md_bg_color: 0, 0, 0, 0
+    md_bg_color: 0.1, 0.1, 0.1, 1
 
     MDBoxLayout:
         orientation: "vertical"
 
-        MDBoxLayout:
-            size_hint_y: None
-            height: dp(70)
-            md_bg_color: 0, 0, 0, 0
-            padding: "10dp"
+        MDTopAppBar:
+            type: "small"
+            size_hint_x: 1
+            pos_hint: {"center_x": .5, "center_y": .5}
 
-            MDLabel:
-                id: car_label
-                text: "Chevete 1986"
-                font_style: "Title"
-                color: 1, 1, 1, 1
-                halign: "right"
-                size_hint_x: None
-                width: dp(455)
-                bold: True
-            MDLabel:
+            MDTopAppBarLeadingButtonContainer:
+                MDActionTopAppBarButton:
+                    icon: "menu"
+
+            MDTopAppBarTitle:
                 id: datetime_label
                 text: ""
-                color: 1, 1, 1, 1
-                font_style: "Title"
                 halign: "center"
-                size_hint_x: None
-                width: dp(550)
-                bold: True
+                pos_hint: {"center_x": .5}
+
 
         GridLayout:
             cols: 3
@@ -40,7 +30,7 @@ MDScreen:
                 anchor_x: 'center'
                 anchor_y: 'center'
                 MDCard:
-                    style: "elevated"
+                    style: "filled"
                     theme_bg_color: "Custom"
                     md_bg_color: 1, 1, 1, 0
                     size_hint: None, None
@@ -49,14 +39,12 @@ MDScreen:
                     elevation_level: 5
                     AsyncImage:
                         source: "icons/radio.png"
-                        size_hint: 1, 1
-                        size: "100dp", "100dp"
             
             AnchorLayout:
                 anchor_x: 'center'
                 anchor_y: 'center'
                 MDCard:
-                    style: "elevated"
+                    style: "filled"
                     theme_bg_color: "Custom"
                     md_bg_color: 1, 1, 1, 0
                     size_hint: None, None
@@ -65,14 +53,12 @@ MDScreen:
                     elevation_level: 5
                     AsyncImage:
                         source: "icons/smartphone.png"
-                        size_hint: 1, 1
-                        size: "100dp", "100dp"
 
             AnchorLayout:
                 anchor_x: 'center'
                 anchor_y: 'center'
                 MDCard:
-                    style: "elevated"
+                    style: "filled"
                     theme_bg_color: "Custom"
                     md_bg_color: 1, 1, 1, 0
                     size_hint: None, None
@@ -80,14 +66,12 @@ MDScreen:
                     pos_hint: {'center_x': 0.5, 'center_y': 0.5}
                     AsyncImage:
                         source: "icons/vehicle.png"
-                        size_hint: 1, 1
-                        size: "100dp", "100dp"
 
             AnchorLayout:
                 anchor_x: 'center'
                 anchor_y: 'center'
                 MDCard:
-                    style: "elevated"
+                    style: "filled"
                     theme_bg_color: "Custom"
                     md_bg_color: 1, 1, 1, 0
                     size_hint: None, None
@@ -95,14 +79,12 @@ MDScreen:
                     pos_hint: {'center_x': 0.5, 'center_y': 0.5}
                     AsyncImage:
                         source: "icons/location.png"
-                        size_hint: 1, 1
-                        size: "100dp", "100dp"
 
             AnchorLayout:
                 anchor_x: 'center'
                 anchor_y: 'center'
                 MDCard:
-                    style: "elevated"
+                    style: "filled"
                     theme_bg_color: "Custom"
                     md_bg_color: 1, 1, 1, 0
                     size_hint: None, None
@@ -110,14 +92,12 @@ MDScreen:
                     pos_hint: {'center_x': 0.5, 'center_y': 0.5}
                     AsyncImage:
                         source: "icons/files.png"
-                        size_hint: 1, 1
-                        size: "100dp", "100dp"
 
             AnchorLayout:
                 anchor_x: 'center'
                 anchor_y: 'center'
                 MDCard:
-                    style: "elevated"
+                    style: "filled"
                     theme_bg_color: "Custom"
                     md_bg_color: 1, 1, 1, 0
                     size_hint: None, None
@@ -125,5 +105,3 @@ MDScreen:
                     pos_hint: {'center_x': 0.5, 'center_y': 0.5}
                     AsyncImage:
                         source: "icons/config.png"
-                        size_hint: 1, 1
-                        size: "100dp", "100dp"
