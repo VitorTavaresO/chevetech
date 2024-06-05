@@ -1,7 +1,7 @@
 #:kivy 2.0.0
 
 MDScreen:
-    md_bg_color: 0.031, 0.059, 0.035
+    md_bg_color: 0, 0, 0, 0
 
     MDBoxLayout:
         orientation: "vertical"
@@ -9,13 +9,14 @@ MDScreen:
         MDBoxLayout:
             size_hint_y: None
             height: dp(70)
-            md_bg_color: 0.275, 0.929, 0.329, 0.8
+            md_bg_color: 0, 0, 0, 0
             padding: "10dp"
 
             MDLabel:
                 id: car_label
                 text: "Chevete 1986"
                 font_style: "Title"
+                color: 1, 1, 1, 1
                 halign: "right"
                 size_hint_x: None
                 width: dp(455)
@@ -23,6 +24,7 @@ MDScreen:
             MDLabel:
                 id: datetime_label
                 text: ""
+                color: 1, 1, 1, 1
                 font_style: "Title"
                 halign: "center"
                 size_hint_x: None
@@ -37,83 +39,73 @@ MDScreen:
             AnchorLayout:
                 anchor_x: 'center'
                 anchor_y: 'center'
-                MDFabButton:
-                    icon: "spotify"
-                    theme_font_size: "Custom"
-                    font_size: "80sp"
+                MDCard:
+                    style: "elevated"
                     theme_bg_color: "Custom"
-                    text_color: 0, 0, 0
-                    md_bg_color: 0.275, 0.929, 0.329, 0.8
+                    md_bg_color: 1, 1, 1, 0
                     size_hint: None, None
-                    size: "150dp", "150dp"
+                    size: "200dp", "200dp"
                     pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    elevation_level: 5
+                    AsyncImage:
+                        source: "spotify.png"
+                        size_hint: 1, 1
+                        size: "200dp", "200dp"
             
             AnchorLayout:
                 anchor_x: 'center'
                 anchor_y: 'center'
-                MDFabButton:
-                    icon: "youtube"
-                    theme_font_size: "Custom"
-                    font_size: "80sp"
+                MDCard:
+                    style: "elevated"
                     theme_bg_color: "Custom"
-                    text_color: 0, 0, 0
-                    md_bg_color: 0.275, 0.929, 0.329, 0.8
+                    md_bg_color: 1, 1, 1, 0
                     size_hint: None, None
-                    size: "150dp", "150dp"
+                    size: "200dp", "200dp"
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    elevation_level: 5
+                    AsyncImage:
+                        source: "bluetooth.png"
+                        size_hint: 1, 1
+                        size: "200dp", "200dp"
+
+            AnchorLayout:
+                anchor_x: 'center'
+                anchor_y: 'center'
+                MDCard:
+                    style: "elevated"
+                    size_hint: None, None
+                    theme_bg_color: "Custom"
+                    md_bg_color: 1, 1, 1, 0
+                    size: "200dp", "200dp"
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    AsyncImage:
+                        source: "gps.png"
+                        size_hint: 1, 1
+                        size: "200dp", "200dp"
+
+            AnchorLayout:
+                anchor_x: 'center'
+                anchor_y: 'center'
+                MDCard:
+                    style: "elevated"
+                    size_hint: None, None
+                    size: "200dp", "200dp"
                     pos_hint: {'center_x': 0.5, 'center_y': 0.5}
 
             AnchorLayout:
                 anchor_x: 'center'
                 anchor_y: 'center'
-                MDFabButton:
-                    icon: "map-marker"
-                    theme_font_size: "Custom"
-                    font_size: "80sp"
-                    theme_bg_color: "Custom"
-                    text_color: 0, 0, 0
-                    md_bg_color: 0.275, 0.929, 0.329, 0.8
+                MDCard:
+                    style: "elevated"
                     size_hint: None, None
-                    size: "150dp", "150dp"
+                    size: "200dp", "200dp"
                     pos_hint: {'center_x': 0.5, 'center_y': 0.5}
 
             AnchorLayout:
                 anchor_x: 'center'
                 anchor_y: 'center'
-                MDFabButton:
-                    icon: "bluetooth"
-                    theme_font_size: "Custom"
-                    font_size: "80sp"
-                    theme_bg_color: "Custom"
-                    text_color: 0, 0, 0
-                    md_bg_color: 0.275, 0.929, 0.329, 0.8
+                MDCard:
+                    style: "elevated"
                     size_hint: None, None
-                    size: "150dp", "150dp"
-                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
-
-            AnchorLayout:
-                anchor_x: 'center'
-                anchor_y: 'center'
-                MDFabButton:
-                    icon: "engine"
-                    theme_font_size: "Custom"
-                    font_size: "80sp"
-                    theme_bg_color: "Custom"
-                    text_color: 0, 0, 0
-                    md_bg_color: 0.275, 0.929, 0.329, 0.8
-                    size_hint: None, None
-                    size: "150dp", "150dp"
-                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
-
-            AnchorLayout:
-                anchor_x: 'center'
-                anchor_y: 'center'
-                MDFabButton:
-                    icon: "cog"
-                    theme_font_size: "Custom"
-                    font_size: "80sp"
-                    theme_bg_color: "Custom"
-                    text_color: 0, 0, 0
-                    md_bg_color: 0.275, 0.929, 0.329, 0.8
-                    size_hint: None, None
-                    size: "150dp", "150dp"
+                    size: "200dp", "200dp"
                     pos_hint: {'center_x': 0.5, 'center_y': 0.5}
