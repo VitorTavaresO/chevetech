@@ -11,14 +11,19 @@ from kivy.clock import Clock
 from datetime import datetime
 
 class MainScreen(MDScreen):
-    pass
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        Clock.schedule_interval(self.update_datetime, 1)
 
+    def update_datetime(self, dt):
+        self.ids.datetime_label.text = datetime.now().strftime("%H:%M\n%d-%m-%Y")
 class ConfigScreen(MDScreen):
     pass
 
 class App(MDApp):
     def build(self):
-        return Builder.load_file("interface.kv")
+        self.root = Builder.load_file("interface.kv")
+        return self.root
     
 if __name__ == "__main__":
     App().run()
