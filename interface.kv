@@ -1,5 +1,11 @@
 #:kivy 2.0.0
-MDScreen:
+ScreenManager:
+    MainScreen:
+    ConfigScreen:
+
+<MainScreen>:
+    name: "main"
+    
     md_bg_color: 0.1, 0.1, 0.1, 1
 
     MDBoxLayout:
@@ -103,5 +109,10 @@ MDScreen:
                     size_hint: None, None
                     size: "150dp", "150dp"
                     pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    on_press: app.root.current = "config"
                     AsyncImage:
                         source: "icons/config.png"
+<ConfigScreen>:
+    name: "config"
+    
+    md_bg_color: 0.1, 0.1, 0.1, 1
