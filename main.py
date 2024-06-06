@@ -4,7 +4,6 @@ Config.set('graphics', 'width', '1024')
 Config.set('graphics', 'height', '600')
 Config.set('graphics', 'resizable', False)
 Config.write()
-from kivy.uix.screenmanager import ScreenManager, Screen
 from kivymd.app import MDApp
 from kivymd.uix.screen import MDScreen
 from kivy.clock import Clock
@@ -38,7 +37,7 @@ class SettingsScreen(MDScreen):
 
 class App(MDApp):
     def build(self):
-        self.root = Builder.load_file("interface.kv")
+        self.root = Builder.load_file('view/interface.kv')
         return self.root
     
 if __name__ == "__main__":
