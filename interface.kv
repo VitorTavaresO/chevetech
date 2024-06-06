@@ -109,10 +109,25 @@ ScreenManager:
                     size_hint: None, None
                     size: "150dp", "150dp"
                     pos_hint: {'center_x': 0.5, 'center_y': 0.5}
-                    on_press: app.root.current = "config"
+                    on_press:
+                        app.root.transition.direction = "left"
+                        app.root.current = "config"
                     AsyncImage:
                         source: "icons/config.png"
 <ConfigScreen>:
     name: "config"
     
     md_bg_color: 0.1, 0.1, 0.1, 1
+    AnchorLayout:
+        anchor_x: 'left'
+        anchor_y: 'top'
+        MDIconButton:
+            icon: "arrow-left"
+            style: "tonal"
+            theme_bg_color: "Custom"
+            md_bg_color: 0.1, 0.1, 0.1, 0
+            theme_icon_color: "Custom"
+            icon_color: "white"
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "main"
