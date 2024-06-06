@@ -1,0 +1,19 @@
+#:kivy 2.0.0
+
+<SmartphoneScreen>:
+    name: "smartphone"
+    
+    md_bg_color: 0.1, 0.1, 0.1, 1
+    AnchorLayout:
+        anchor_x: 'left'
+        anchor_y: 'top'
+        MDIconButton:
+            icon: "arrow-left"
+            style: "tonal"
+            theme_bg_color: "Custom"
+            md_bg_color: 0.1, 0.1, 0.1, 0
+            theme_icon_color: "Custom"
+            icon_color: "white"
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "main"
