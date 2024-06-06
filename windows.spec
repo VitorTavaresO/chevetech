@@ -6,7 +6,7 @@ a = Analysis(['main.py'],
              pathex=[],
              binaries=[],
              datas=[
-                ('interface.kv', '.'),
+                ('view/interface.kv', '.'),
                 ('icons', 'icons')
             ],
              hiddenimports=['kivymd.icon_definitions'],
