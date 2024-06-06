@@ -17,7 +17,23 @@ class MainScreen(MDScreen):
 
     def update_datetime(self, dt):
         self.ids.datetime_label.text = datetime.now().strftime("%H:%M\n%d-%m-%Y")
-class ConfigScreen(MDScreen):
+
+class RadioScreen(MDScreen):
+    pass
+
+class SmartphoneScreen(MDScreen):
+    pass
+
+class VehicleScreen(MDScreen):
+    pass
+
+class LocationScreen(MDScreen):
+    pass
+
+class FilesScreen(MDScreen):
+    pass
+
+class SettingsScreen(MDScreen):
     pass
 
 class App(MDApp):

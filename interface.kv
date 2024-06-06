@@ -1,7 +1,12 @@
 #:kivy 2.0.0
 ScreenManager:
     MainScreen:
-    ConfigScreen:
+    RadioScreen:
+    SmartphoneScreen:
+    VehicleScreen:
+    LocationScreen:
+    FilesScreen:
+    SettingsScreen:
 
 <MainScreen>:
     name: "main"
@@ -42,7 +47,9 @@ ScreenManager:
                     size_hint: None, None
                     size: "150dp", "150dp"
                     pos_hint: {'center_x': 0.5, 'center_y': 0.5}
-                    elevation_level: 5
+                    on_press:
+                        app.root.transition.direction = "left"
+                        app.root.current = "radio"
                     AsyncImage:
                         source: "icons/radio.png"
             
@@ -56,7 +63,9 @@ ScreenManager:
                     size_hint: None, None
                     size: "150dp", "150dp"
                     pos_hint: {'center_x': 0.5, 'center_y': 0.5}
-                    elevation_level: 5
+                    on_press:
+                        app.root.transition.direction = "left"
+                        app.root.current = "smartphone"
                     AsyncImage:
                         source: "icons/smartphone.png"
 
@@ -70,6 +79,9 @@ ScreenManager:
                     size_hint: None, None
                     size: "150dp", "150dp"
                     pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    on_press:
+                        app.root.transition.direction = "left"
+                        app.root.current = "vehicle"
                     AsyncImage:
                         source: "icons/vehicle.png"
 
@@ -83,6 +95,9 @@ ScreenManager:
                     size_hint: None, None
                     size: "150dp", "150dp"
                     pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    on_press:
+                        app.root.transition.direction = "left"
+                        app.root.current = "location"
                     AsyncImage:
                         source: "icons/location.png"
 
@@ -96,6 +111,9 @@ ScreenManager:
                     size_hint: None, None
                     size: "150dp", "150dp"
                     pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    on_press:
+                        app.root.transition.direction = "left"
+                        app.root.current = "files"
                     AsyncImage:
                         source: "icons/files.png"
 
@@ -111,11 +129,13 @@ ScreenManager:
                     pos_hint: {'center_x': 0.5, 'center_y': 0.5}
                     on_press:
                         app.root.transition.direction = "left"
-                        app.root.current = "config"
+                        app.root.current = "settings"
                     AsyncImage:
-                        source: "icons/config.png"
-<ConfigScreen>:
-    name: "config"
+                        source: "icons/settings.png"
+
+
+<RadioScreen>:
+    name: "radio"
     
     md_bg_color: 0.1, 0.1, 0.1, 1
     AnchorLayout:
@@ -131,3 +151,94 @@ ScreenManager:
             on_press:
                 app.root.transition.direction = "right"
                 app.root.current = "main"
+
+<SmartphoneScreen>:
+    name: "smartphone"
+    
+    md_bg_color: 0.1, 0.1, 0.1, 1
+    AnchorLayout:
+        anchor_x: 'left'
+        anchor_y: 'top'
+        MDIconButton:
+            icon: "arrow-left"
+            style: "tonal"
+            theme_bg_color: "Custom"
+            md_bg_color: 0.1, 0.1, 0.1, 0
+            theme_icon_color: "Custom"
+            icon_color: "white"
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "main"
+
+<VehicleScreen>:
+    name: "vehicle"
+    
+    md_bg_color: 0.1, 0.1, 0.1, 1
+    AnchorLayout:
+        anchor_x: 'left'
+        anchor_y: 'top'
+        MDIconButton:
+            icon: "arrow-left"
+            style: "tonal"
+            theme_bg_color: "Custom"
+            md_bg_color: 0.1, 0.1, 0.1, 0
+            theme_icon_color: "Custom"
+            icon_color: "white"
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "main"
+
+<LocationScreen>:
+    name: "location"
+    
+    md_bg_color: 0.1, 0.1, 0.1, 1
+    AnchorLayout:
+        anchor_x: 'left'
+        anchor_y: 'top'
+        MDIconButton:
+            icon: "arrow-left"
+            style: "tonal"
+            theme_bg_color: "Custom"
+            md_bg_color: 0.1, 0.1, 0.1, 0
+            theme_icon_color: "Custom"
+            icon_color: "white"
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "main"
+
+<FilesScreen>:
+    name: "files"
+    
+    md_bg_color: 0.1, 0.1, 0.1, 1
+    AnchorLayout:
+        anchor_x: 'left'
+        anchor_y: 'top'
+        MDIconButton:
+            icon: "arrow-left"
+            style: "tonal"
+            theme_bg_color: "Custom"
+            md_bg_color: 0.1, 0.1, 0.1, 0
+            theme_icon_color: "Custom"
+            icon_color: "white"
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "main"
+
+<SettingsScreen>:
+    name: "settings"
+    
+    md_bg_color: 0.1, 0.1, 0.1, 1
+    AnchorLayout:
+        anchor_x: 'left'
+        anchor_y: 'top'
+        MDIconButton:
+            icon: "arrow-left"
+            style: "tonal"
+            theme_bg_color: "Custom"
+            md_bg_color: 0.1, 0.1, 0.1, 0
+            theme_icon_color: "Custom"
+            icon_color: "white"
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "main"
+
