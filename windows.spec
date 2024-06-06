@@ -5,7 +5,10 @@ from kivymd import hooks_path as kivymd_hooks_path
 a = Analysis(['main.py'],
              pathex=[],
              binaries=[],
-             datas=[('interface.kv', '.')],
+             datas=[
+                ('interface.kv', '.'),
+                ('icons', 'icons')
+            ],
              hiddenimports=['kivymd.icon_definitions'],
              hookspath=[kivymd_hooks_path],
              runtime_hooks=[],
