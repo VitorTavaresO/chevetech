@@ -21,41 +21,74 @@
     GridLayout:
         cols: 1
         spacing: "10dp"
-        padding: "10dp"
-        AnchorLayout:
-            anchor_x: 'center'
-            anchor_y: 'top'
-            MDCard:
-                style: "filled"
-                theme_bg_color: "Custom"
-                md_bg_color: 0.4, 0.4, 0.4, 1
-                size_hint: None, None
-                size: "900dp", "100dp"
-                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
-                radius: [40, 40, 40, 40]
-                on_press:
-                    app.root.transition.direction = "left"
-                    app.root.current = "radio"
-                MDRelativeLayout:
-                    MDButton:
-                        id: on_off_button
-                        style: "filled"
-                        theme_bg_color: "Custom"
-                        md_bg_color: 0.1, 0.1, 0.1, 1
-                        theme_text_color: "Custom"
-                        text_color: 1, 1, 1, 1
-                        pos_hint: {"top": 0.75, "right": 0.99}
-                        size_hint: None, None
-                        size: "50dp", "50dp"
-                        on_press:
-                            root.toggle_button_text(on_off_text, on_off_button)
-                        MDButtonText:
-                            id: on_off_text
-                            text: "OFF"
-                            bold: "True"
+        padding: "40dp"
+        MDCard:
+            id: connection_card
+            style: "filled"
+            theme_bg_color: "Custom"
+            md_bg_color: 0.4, 0.4, 0.4, 1
+            size_hint: None, None
+            size: "950dp", "100dp"
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            radius: [40, 40, 40, 40]
+            on_press:
+                app.root.transition.direction = "left"
+                app.root.current = "radio"
+            MDRelativeLayout:
+                MDButton:
+                    id: on_off_button_connection
+                    style: "filled"
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.1, 0.1, 0.1, 1
+                    theme_text_color: "Custom"
+                    text_color: 1, 1, 1, 1
+                    pos_hint: {"top": 0.75, "right": 0.99}
+                    size_hint: None, None
+                    size: "50dp", "50dp"
+                    on_press:
+                        root.toggle_button_text(on_off_text_connection, on_off_button_connection)
+                    MDButtonText:
+                        id: on_off_text_connection
+                        text: "OFF"
+                        bold: "True"
 
-                    MDLabel:
-                        color: 1, 1, 1, 1
-                        bold: True
-                        text: "Connections"
-                        padding: [10, 10, 10, 10]
+                MDLabel:
+                    color: 1, 1, 1, 1
+                    bold: True
+                    text: "Connections"
+                    padding: [10, 10, 10, 10]
+        MDCard:
+            id: hotspot_card
+            style: "filled"
+            theme_bg_color: "Custom"
+            md_bg_color: 0.4, 0.4, 0.4, 1
+            size_hint: None, None
+            size: "950dp", "100dp"
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            radius: [40, 40, 40, 40]
+            on_press:
+                app.root.transition.direction = "left"
+                app.root.current = "radio"
+            MDRelativeLayout:
+                MDButton:
+                    id: on_off_button_hotspot
+                    style: "filled"
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.1, 0.1, 0.1, 1
+                    theme_text_color: "Custom"
+                    text_color: 1, 1, 1, 1
+                    pos_hint: {"top": 0.75, "right": 0.99}
+                    size_hint: None, None
+                    size: "50dp", "50dp"
+                    on_press:
+                        root.toggle_button_text(on_off_text_hotspot, on_off_button_hotspot)
+                    MDButtonText:
+                        id: on_off_text_hotspot
+                        text: "OFF"
+                        bold: "True"
+
+                MDLabel:
+                    color: 1, 1, 1, 1
+                    bold: True
+                    text: "Hotspot"
+                    padding: [10, 10, 10, 10]
