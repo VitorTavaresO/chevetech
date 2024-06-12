@@ -41,6 +41,9 @@ class SettingsScreen(MDScreen):
             text.text = "OFF"
             button.md_bg_color = (0.1, 0.1, 0.1, 1)
 
+class HotspotScreen(MDScreen):
+    pass
+
 class App(MDApp):
     def build(self):
         self.root = Builder.load_file('view/interface.kv')

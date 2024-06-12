@@ -68,7 +68,7 @@
             radius: [40, 40, 40, 40]
             on_press:
                 app.root.transition.direction = "left"
-                app.root.current = "radio"
+                app.root.current = "hotspot"
             MDRelativeLayout:
                 MDButton:
                     id: on_off_button_hotspot
@@ -92,3 +92,67 @@
                     bold: True
                     text: "Hotspot"
                     padding: [10, 10, 10, 10]
+
+
+<HotspotScreen>:
+    name: "hotspot"
+
+    md_bg_color: 0.1, 0.1, 0.1, 1
+    AnchorLayout:
+        anchor_x: 'left'
+        anchor_y: 'top'
+        MDIconButton:
+            icon: "arrow-left"
+            style: "tonal"
+            theme_bg_color: "Custom"
+            md_bg_color: 0.1, 0.1, 0.1, 0
+            theme_icon_color: "Custom"
+            icon_color: "white"
+            on_press:
+                app.root.transition.direction = "right"
+                app.root.current = "settings"
+    
+    GridLayout:
+        cols: 1
+        spacing: "10dp"
+        padding: "40dp"
+        MDCard:
+            id: connection_card
+            style: "filled"
+            theme_bg_color: "Custom"
+            md_bg_color: 0.4, 0.4, 0.4, 1
+            size_hint: None, None
+            size: "950dp", "100dp"
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            radius: [40, 40, 40, 40]
+
+            on_press:
+                app.root.transition.direction = "left"
+                app.root.current = "radio"
+            MDLabel:
+                color: 1, 1, 1, 1
+                bold: True
+                text: "Nome da Rede"
+                padding: [10, 10, 10, 10]
+            
+
+        MDCard:
+            id: hotspot_card
+            style: "filled"
+            theme_bg_color: "Custom"
+            md_bg_color: 0.4, 0.4, 0.4, 1
+            size_hint: None, None
+            size: "950dp", "100dp"
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            radius: [40, 40, 40, 40]
+
+            on_press:
+                app.root.transition.direction = "left"
+                app.root.current = "hotspot"
+
+            MDLabel:
+                color: 1, 1, 1, 1 
+                bold: True
+                text: "Senha da Rede"
+                padding: [10, 10, 10, 10]
+
