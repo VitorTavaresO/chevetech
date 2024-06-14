@@ -117,7 +117,7 @@
         spacing: "10dp"
         padding: "40dp"
         MDCard:
-            id: hotspot_card
+            id: hotspot_on_off_card
             style: "filled"
             theme_bg_color: "Custom"
             md_bg_color: 0.4, 0.4, 0.4, 1
@@ -150,15 +150,17 @@
                     color: 1, 1, 1, 1
                     bold: True
                     text: "Hotspot"
-                    padding: [10, 10, 10, 10]
+                    padding: [30, 10, 10, 10]
 
         MDCard:
+            id: hotspot_settings_card
             theme_bg_color: "Custom"
             md_bg_color: 0.4, 0.4, 0.4, 1
             size_hint: None, None
             size: "950dp", "200dp"
             pos_hint: {'center_x': 0.5, 'center_y': 0.5}
             radius: [40, 40, 40, 40]
+            on_release: app.root.current_screen.show_dialog(root.id)
             GridLayout:
                 cols: 1
                 padding: "20dp"
@@ -168,6 +170,7 @@
                     text: "Nome da Rede"
                     padding: [10, 0, 0, 0]
                 MDLabel:
+                    id: hotspot_name
                     color: 1, 1, 1, 1
                     bold: True
                     text: "Chevetech"
@@ -182,6 +185,7 @@
                     size_hint_x: None
                     width: 200
                 MDLabel:
+                    id: hotspot_password
                     color: 1, 1, 1, 1
                     bold: True
                     text: "Duba123"
