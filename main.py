@@ -42,7 +42,13 @@ class SettingsScreen(MDScreen):
             button.md_bg_color = (0.1, 0.1, 0.1, 1)
 
 class HotspotScreen(MDScreen):
-    pass
+    def toggle_button_text(self, text, button):
+        if text.text == "OFF":
+            text.text = "ON"
+            button.md_bg_color = (0.118, 0.678, 0.298, 1)
+        else:
+            text.text = "OFF"
+            button.md_bg_color = (0.1, 0.1, 0.1, 1)
 
 class App(MDApp):
     def build(self):

@@ -117,6 +117,7 @@
         spacing: "10dp"
         padding: "40dp"
         MDCard:
+            id: hotspot_card
             style: "filled"
             theme_bg_color: "Custom"
             md_bg_color: 0.4, 0.4, 0.4, 1
@@ -124,19 +125,69 @@
             size: "950dp", "100dp"
             pos_hint: {'center_x': 0.5, 'center_y': 0.5}
             radius: [40, 40, 40, 40]
-            BoxLayout:
-                orientation: 'vertical'
+            on_press:
+                app.root.transition.direction = "left"
+                app.root.current = "hotspot"
+            MDRelativeLayout:
+                MDButton:
+                    id: on_off_button_hotspot
+                    style: "filled"
+                    theme_bg_color: "Custom"
+                    md_bg_color: 0.1, 0.1, 0.1, 1
+                    theme_text_color: "Custom"
+                    text_color: 1, 1, 1, 1
+                    pos_hint: {"top": 0.75, "right": 0.99}
+                    size_hint: None, None
+                    size: "50dp", "50dp"
+                    on_press:
+                        root.toggle_button_text(on_off_text_hotspot, on_off_button_hotspot)
+                    MDButtonText:
+                        id: on_off_text_hotspot
+                        text: "OFF"
+                        bold: "True"
+
                 MDLabel:
                     color: 1, 1, 1, 1
                     bold: True
-                    text: "Nome da Rede"
-                    padding: [10, 10, 10, 10]
-                Widget:  # This widget will take up the remaining space
-                MDLabel:
-                    color: 1, 1, 1, 1
-                    bold: True
-                    text: "Nome da Rede"
+                    text: "Hotspot"
                     padding: [10, 10, 10, 10]
 
+        MDCard:
+            theme_bg_color: "Custom"
+            md_bg_color: 0.4, 0.4, 0.4, 1
+            size_hint: None, None
+            size: "950dp", "200dp"
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            radius: [40, 40, 40, 40]
+            GridLayout:
+                cols: 1
+                padding: "20dp"
+                MDLabel:
+                    color: 1, 1, 1, 1
+                    italic: True
+                    text: "Nome da Rede"
+                    padding: [10, 0, 0, 0]
+                MDLabel:
+                    color: 1, 1, 1, 1
+                    bold: True
+                    text: "Chevetech"
+                    padding: [10, 0, 0, 20]
+                    size_hint_x: None
+                    width: 200
+                MDLabel:
+                    color: 1, 1, 1, 1
+                    italic: True
+                    text: "Senha da Rede"
+                    padding: [10, 20, 0, 0]
+                    size_hint_x: None
+                    width: 200
+                MDLabel:
+                    color: 1, 1, 1, 1
+                    bold: True
+                    text: "Duba123"
+                    padding: [10, 0, 0, 0]
+                    size_hint_x: None
+                    width: 200
+                        
 
 
