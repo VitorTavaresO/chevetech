@@ -8,10 +8,25 @@ from kivymd.app import MDApp
 from kivymd.uix.screen import MDScreen
 from kivy.clock import Clock
 from datetime import datetime
-from kivy.uix.boxlayout import BoxLayout
-from kivymd.uix.dialog import MDDialog
-from kivymd.uix.button import MDButton
-from kivymd.uix.textfield import MDTextField
+from kivy.uix.widget import Widget
+from kivymd.uix.button import MDButton, MDButtonText
+from kivymd.uix.textfield import MDTextField, MDTextFieldHintText
+from kivymd.uix.dialog import (
+    MDDialog,
+    MDDialogIcon,
+    MDDialogHeadlineText,
+    MDDialogSupportingText,
+    MDDialogButtonContainer,
+    MDDialogContentContainer,
+)
+from kivymd.uix.divider import MDDivider
+from kivymd.uix.list import (
+    MDListItem,
+    MDListItemLeadingIcon,
+    MDListItemSupportingText,
+)
+
+
 
 class MainScreen(MDScreen):
     def __init__(self, **kwargs):
@@ -48,55 +63,51 @@ class SettingsScreen(MDScreen):
 class HotspotScreen(MDScreen):
     dialog = None
 
-    def show_dialog(self, card_id):
-        if not self.dialog:
-            self.dialog = MDDialog(
-                title="Editar Rede",
-                type="custom",
-                content_cls=BoxLayout(
-                    orientation="vertical",
-                    spacing="12dp",
-                    size_hint_y=None,
-                    height="120dp",
-                    children=[
-                        MDTextField(
-                            id="hotspot_name_field",
-                            hint_text="Nome da Rede",
-                            text=self.ids.hotspot_name.text
-                        ),
-                        MDTextField(
-                            id="hotspot_password_field",
-                            hint_text="Senha da Rede",
-                            text=self.ids.hotspot_password.text
-                        ),
-                    ]
+    def show_dialog(self):
+        self.dialog = MDDialog(
+            MDDialogIcon(
+                icon="access-point-network",
+            ),
+            MDDialogHeadlineText(
+                text="Alterar Configuração do Hotspot",
+            ),
+            MDDialogContentContainer(
+                MDDivider(),
+                MDTextField(
+                    MDTextFieldHintText(
+                        text= "Nome do Hotspot"
+                    ),
+                    mode= "outlined",
                 ),
-                buttons=[
-                    MDButton(
-                        style="elevated",
-                        text="CANCEL",
-                        on_release=self.close_dialog
+                
+                MDTextField(
+                    MDTextFieldHintText(
+                        text= "Senha do Hotspot"
                     ),
-                    MDButton(
-                        style="elevated",
-                        text="OK",
-                        on_release=lambda *args: self.update_network_info(card_id)
-                    ),
-                ],
-            )
+                    mode= "outlined",
+                ),
+                MDDivider(),
+                orientation="vertical",
+                spacing="12dp",
+            ),
+            MDDialogButtonContainer(
+                Widget(),
+                MDButton(
+                    MDButtonText(text="Cancelar"),
+                    style="text",
+                    on_release=self.close_dialog,
+                ),
+                MDButton(
+                    MDButtonText(text="Salvar"),
+                    style="text",
+                ),
+                spacing="8dp",
+            ),
+        )
         self.dialog.open()
 
     def close_dialog(self, *args):
         self.dialog.dismiss()
-
-    def update_network_info(self, card_id, *args):
-        new_name = self.dialog.content_cls.children[1].text
-        new_password = self.dialog.content_cls.children[0].text
-        self.ids.hotspot_name.text = new_name
-        self.ids.hotspot_password.text = new_password
-        self.ids[card_id].children[0].children[1].text = new_name
-        self.ids[card_id].children[0].children[3].text = new_password
-        self.close_dialog()
 
 
 class App(MDApp):
