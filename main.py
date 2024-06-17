@@ -1,3 +1,4 @@
+from kivy.app import App
 from kivy.lang import Builder
 from kivy.config import Config
 Config.set('graphics', 'width', '1024')
@@ -25,6 +26,9 @@ from kivymd.uix.list import (
     MDListItemLeadingIcon,
     MDListItemSupportingText,
 )
+
+global app
+global screen_manager
 
 class MainScreen(MDScreen):
     def __init__(self, **kwargs):
@@ -122,23 +126,21 @@ class HotspotScreen(MDScreen):
     
 
     def save_inputs(self, instance):
+        screen_manager = App.get_running_app().root
+
         hotspot_name = self.hotspot_name_input.text
         hotspot_password = self.hotspot_password_input.text
-
-        # Obter a instância da aplicação
-        app = App.get_running_app()
-
-        # Obter a instância do ScreenManager
-        screen_manager = app.root
 
         settings_screen = screen_manager.get_screen('hotspot')
 
         hotspot_name_label = settings_screen.ids['hotspot_name']
         hotspot_password_label = settings_screen.ids['hotspot_password']
-
-        # Alterar o texto dos labels
-        hotspot_name_label.text = hotspot_name
-        hotspot_password_label.text = hotspot_password
+        
+        if(hotspot_name != ""):
+            hotspot_name_label.text = hotspot_name
+        if(hotspot_password != ""):
+            hotspot_password_label.text = hotspot_password
+        
         self.close_dialog()
 
     def close_dialog(self, *args):
