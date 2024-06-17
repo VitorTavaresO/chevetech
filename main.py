@@ -7,14 +7,14 @@ Config.set('graphics', 'resizable', False)
 Config.write()
 from kivymd.app import MDApp
 
-from models.main import MainScreen
-from models.radio import RadioScreen
-from models.smartphone import SmartphoneScreen
-from models.vehicle import VehicleScreen
-from models.location import LocationScreen
-from models.files import FilesScreen
-from models.settings import SettingsScreen
-from models.settings import HotspotScreen
+from classes.main import MainScreen
+from classes.radio import RadioScreen
+from classes.smartphone import SmartphoneScreen
+from classes.vehicle import VehicleScreen
+from classes.location import LocationScreen
+from classes.files import FilesScreen
+from classes.settings import SettingsScreen
+from classes.settings import HotspotScreen
 
 
 class App(MDApp):
