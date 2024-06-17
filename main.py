@@ -26,8 +26,6 @@ from kivymd.uix.list import (
     MDListItemSupportingText,
 )
 
-
-
 class MainScreen(MDScreen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -73,6 +71,23 @@ class HotspotScreen(MDScreen):
     dialog = None
 
     def show_dialog(self):
+
+        self.hotspot_name_input = MDTextField(
+            MDTextFieldHintText(
+                text="Nome do Hotspot"
+            ),
+            mode="outlined",
+            id="hotspot_name_input"
+        )
+
+        self.hotspot_password_input = MDTextField(
+            MDTextFieldHintText(
+                text="Senha do Hotspot"
+            ),
+            mode="outlined",
+            id="hotspot_password_input"
+        )
+
         self.dialog = MDDialog(
             MDDialogIcon(
                 icon="access-point-network",
@@ -82,19 +97,8 @@ class HotspotScreen(MDScreen):
             ),
             MDDialogContentContainer(
                 MDDivider(),
-                MDTextField(
-                    MDTextFieldHintText(
-                        text= "Nome do Hotspot"
-                    ),
-                    mode= "outlined",
-                ),
-                
-                MDTextField(
-                    MDTextFieldHintText(
-                        text= "Senha do Hotspot"
-                    ),
-                    mode= "outlined",
-                ),
+                self.hotspot_name_input,
+                self.hotspot_password_input,
                 MDDivider(),
                 orientation="vertical",
                 spacing="12dp",
@@ -109,15 +113,36 @@ class HotspotScreen(MDScreen):
                 MDButton(
                     MDButtonText(text="Salvar"),
                     style="text",
+                    on_release=self.save_inputs,
                 ),
                 spacing="8dp",
             ),
         )
-        self.dialog.open()    
+        self.dialog.open()
+    
+
+    def save_inputs(self, instance):
+        hotspot_name = self.hotspot_name_input.text
+        hotspot_password = self.hotspot_password_input.text
+
+        # Obter a instância da aplicação
+        app = App.get_running_app()
+
+        # Obter a instância do ScreenManager
+        screen_manager = app.root
+
+        settings_screen = screen_manager.get_screen('hotspot')
+
+        hotspot_name_label = settings_screen.ids['hotspot_name']
+        hotspot_password_label = settings_screen.ids['hotspot_password']
+
+        # Alterar o texto dos labels
+        hotspot_name_label.text = hotspot_name
+        hotspot_password_label.text = hotspot_password
+        self.close_dialog()
 
     def close_dialog(self, *args):
         self.dialog.dismiss()
-
 
 class App(MDApp):
     def build(self):
