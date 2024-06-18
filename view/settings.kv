@@ -36,7 +36,7 @@
                 app.root.current = "radio"
             MDRelativeLayout:
                 MDButton:
-                    id: on_off_button_connection
+                    id: toggle_button_connection
                     style: "filled"
                     theme_bg_color: "Custom"
                     md_bg_color: 0.1, 0.1, 0.1, 1
@@ -46,9 +46,9 @@
                     size_hint: None, None
                     size: "50dp", "50dp"
                     on_press:
-                        root.toggle_button_text(on_off_text_connection, on_off_button_connection)
+                        root.toggle_button_text(toggle_text_connection, toggle_button_connection)
                     MDButtonText:
-                        id: on_off_text_connection
+                        id: toggle_text_connection
                         text: "OFF"
                         bold: "True"
 
@@ -71,7 +71,7 @@
                 app.root.current = "hotspot"
             MDRelativeLayout:
                 MDButton:
-                    id: on_off_button_hotspot
+                    id: toggle_button_hotspot
                     style: "filled"
                     theme_bg_color: "Custom"
                     md_bg_color: 0.1, 0.1, 0.1, 1
@@ -81,9 +81,9 @@
                     size_hint: None, None
                     size: "50dp", "50dp"
                     on_press:
-                        root.toggle_button_text(on_off_text_hotspot, on_off_button_hotspot)
+                        root.toggle_button_text(toggle_text_hotspot, toggle_button_hotspot)
                     MDButtonText:
-                        id: on_off_text_hotspot
+                        id: toggle_text_hotspot
                         text: "OFF"
                         bold: "True"
 
@@ -118,7 +118,7 @@
         spacing: "10dp"
         padding: "40dp"
         MDCard:
-            id: hotspot_on_off_card
+            id: hotspot_toggle_card
             style: "filled"
             theme_bg_color: "Custom"
             md_bg_color: 0.894, 0.882, 0.914
@@ -131,7 +131,7 @@
                 app.root.current = "hotspot"
             MDRelativeLayout:
                 MDButton:
-                    id: on_off_button_hotspot
+                    id: toggle_button_hotspot
                     style: "filled"
                     theme_bg_color: "Custom"
                     md_bg_color: 0.1, 0.1, 0.1, 1
@@ -141,9 +141,9 @@
                     size_hint: None, None
                     size: "50dp", "50dp"
                     on_press:
-                        root.toggle_button_text(on_off_text_hotspot, on_off_button_hotspot)
+                        root.toggle_button_text(toggle_text_hotspot, toggle_button_hotspot)
                     MDButtonText:
-                        id: on_off_text_hotspot
+                        id: toggle_text_hotspot
                         text: "OFF"
                         bold: "True"
 

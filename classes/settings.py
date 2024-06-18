@@ -22,6 +22,17 @@ from kivymd.uix.list import (
 import managers
 
 class SettingsScreen(MDScreen):
+    def on_enter(self, *args):
+        settings_screen = managers.screen_manager.get_screen('settings')
+        
+        if(managers.data['connections']['status'] == "ON"):
+            settings_screen.ids['toggle_text_connection'].text = "ON"
+            settings_screen.ids['toggle_button_connection'].md_bg_color = (0.118, 0.678, 0.298, 1)
+        else:
+            settings_screen.ids['toggle_text_connection'].text = "OFF"
+            settings_screen.ids['toggle_button_connection'].md_bg_color = (0.1, 0.1, 0.1, 1)
+        
+
     def toggle_button_text(self, text_field, button):
         if text_field.text == "OFF":
             text_field.text = "ON"
