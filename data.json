@@ -4,9 +4,9 @@
             "status": "ON"
         },
         "hotspot": {
-            "status": "ON",
-            "name": "rXanxess",
-            "password": "Abelhoso"
+            "status": "OFF",
+            "name": "Chevetech",
+            "password": "Chevetech"
         }
     }
 ]

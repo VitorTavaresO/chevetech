@@ -24,11 +24,10 @@ import managers
 class SettingsScreen(MDScreen):
     def on_enter(self, *args):
         data = managers.read_from_data()
-        settings_screen = managers.screen_manager.get_screen('settings')
-        connection_button = settings_screen.ids['toggle_button']
-        connection_text = settings_screen.ids['toggle_text']
-        hotspot_button = settings_screen.ids['toggle_button']
-        hotspot_text = settings_screen.ids['toggle_text']
+        connection_button = self.ids['connection_toggle_button']
+        connection_text = self.ids['connection_toggle_text']
+        hotspot_button = self.ids['hotspot_toggle_button']
+        hotspot_text = self.ids['hotspot_toggle_text']
         
         if(data['connections']['status'] == "ON"):
             connection_text.text = "ON"
@@ -63,12 +62,11 @@ class SettingsScreen(MDScreen):
 class HotspotScreen(MDScreen):
     def on_enter(self):
         data = managers.read_from_data()
-        hotspot_screen = managers.screen_manager.get_screen('hotspot')
         
-        hotspot_button = hotspot_screen.ids['toggle_button']
-        hotspot_text = hotspot_screen.ids['toggle_text']
-        hotspot_name_label = hotspot_screen.ids['hotspot_name']
-        hotspot_password_label = hotspot_screen.ids['hotspot_password']
+        hotspot_button = self.ids['hotspot_toggle_button']
+        hotspot_text = self.ids['hotspot_toggle_text']
+        hotspot_name_label = self.ids['hotspot_name']
+        hotspot_password_label = self.ids['hotspot_password']
         
         if data['hotspot']['status'] == "ON":
             hotspot_text.text = "ON"

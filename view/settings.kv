@@ -37,7 +37,7 @@
                 app.root.current = "radio"
             MDRelativeLayout:
                 MDButton:
-                    id: toggle_button
+                    id: connection_toggle_button
                     style: "filled"
                     theme_bg_color: "Custom"
                     md_bg_color: 0.1, 0.1, 0.1, 1
@@ -49,7 +49,7 @@
                     on_press:
                         root.toggle_button_text("connection_card", self)
                     MDButtonText:
-                        id: toggle_text
+                        id: connection_toggle_text
                         text: "OFF"
                         bold: "True"
 
@@ -73,7 +73,7 @@
             MDRelativeLayout:
                 id: hotspot_card_relative
                 MDButton:
-                    id: toggle_button
+                    id: hotspot_toggle_button
                     style: "filled"
                     theme_bg_color: "Custom"
                     md_bg_color: 0.1, 0.1, 0.1, 1
@@ -85,7 +85,7 @@
                     on_press:
                         root.toggle_button_text("hotspot_card", self)
                     MDButtonText:
-                        id: toggle_text
+                        id: hotspot_toggle_text
                         text: "OFF"
                         bold: "True"
 
@@ -133,7 +133,7 @@
                 app.root.current = "hotspot"
             MDRelativeLayout:
                 MDButton:
-                    id: toggle_button
+                    id: hotspot_toggle_button
                     style: "filled"
                     theme_bg_color: "Custom"
                     md_bg_color: 0.1, 0.1, 0.1, 1
@@ -145,7 +145,7 @@
                     on_press:
                         root.toggle_button_text("hotspot_card", self)
                     MDButtonText:
-                        id: toggle_text
+                        id: hotspot_toggle_text
                         text: "OFF"
                         bold: "True"
 
