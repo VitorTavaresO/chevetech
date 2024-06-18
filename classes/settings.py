@@ -1,3 +1,4 @@
+import json
 from kivy.app import App
 from kivymd.uix.screen import MDScreen
 from kivy.uix.widget import Widget
@@ -18,6 +19,7 @@ from kivymd.uix.list import (
     MDListItemSupportingText,
 )
 
+import managers
 
 class SettingsScreen(MDScreen):
     def toggle_button_text(self, text_field, button):
@@ -29,6 +31,14 @@ class SettingsScreen(MDScreen):
             button.md_bg_color = (0.1, 0.1, 0.1, 1)
 
 class HotspotScreen(MDScreen):
+    def on_enter(self, *args):
+        hotspot_screen = managers.screen_manager.get_screen('hotspot')
+
+        hotspot_name_label = hotspot_screen.ids['hotspot_name']
+        hotspot_password_label = hotspot_screen.ids['hotspot_password']
+            
+        hotspot_name_label.text = managers.data['hotspot']['name']
+        hotspot_password_label.text = managers.data['hotspot']['password']
 
     def toggle_button_text(self, text_field, button):
         if text_field.text == "OFF":
@@ -39,7 +49,6 @@ class HotspotScreen(MDScreen):
             button.md_bg_color = (0.1, 0.1, 0.1, 1)
 
     dialog = None
-
     def show_dialog(self):
 
         self.hotspot_name_input = MDTextField(
@@ -92,15 +101,13 @@ class HotspotScreen(MDScreen):
     
 
     def save_inputs(self, instance):
-        screen_manager = App.get_running_app().root
-
         hotspot_name = self.hotspot_name_input.text
         hotspot_password = self.hotspot_password_input.text
 
-        settings_screen = screen_manager.get_screen('hotspot')
+        hotspot_screen = managers.screen_manager.get_screen('hotspot')
 
-        hotspot_name_label = settings_screen.ids['hotspot_name']
-        hotspot_password_label = settings_screen.ids['hotspot_password']
+        hotspot_name_label = hotspot_screen.ids['hotspot_name']
+        hotspot_password_label = hotspot_screen.ids['hotspot_password']
         
         if(hotspot_name != ""):
             hotspot_name_label.text = hotspot_name
