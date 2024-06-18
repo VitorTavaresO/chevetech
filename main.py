@@ -7,6 +7,8 @@ Config.set('graphics', 'resizable', False)
 Config.write()
 from kivymd.app import MDApp
 
+import managers
+
 from classes.main import MainScreen
 from classes.radio import RadioScreen
 from classes.smartphone import SmartphoneScreen
@@ -21,6 +23,9 @@ class App(MDApp):
     def build(self):
         self.root = Builder.load_file('view/interface.kv')
         return self.root
+
+    def on_start(self):
+       managers.screen_manager = self.root
 
 if __name__ == "__main__":
     App().run()
