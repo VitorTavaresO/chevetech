@@ -42,7 +42,7 @@ class SettingsScreen(MDScreen):
             button.md_bg_color = (0.1, 0.1, 0.1, 1)
 
 class HotspotScreen(MDScreen):
-    def on_enter(self, *args):
+    def on_enter(self):
         hotspot_screen = managers.screen_manager.get_screen('hotspot')
 
         hotspot_name_label = hotspot_screen.ids['hotspot_name']
@@ -50,6 +50,16 @@ class HotspotScreen(MDScreen):
             
         hotspot_name_label.text = managers.data['hotspot']['name']
         hotspot_password_label.text = managers.data['hotspot']['password']
+
+    def update_screen_data():
+        hotspot_screen = managers.screen_manager.get_screen('hotspot')
+
+        hotspot_name_label = hotspot_screen.ids['hotspot_name']
+        hotspot_password_label = hotspot_screen.ids['hotspot_password']
+            
+        hotspot_name_label.text = managers.data['hotspot']['name']
+        hotspot_password_label.text = managers.data['hotspot']['password']
+
 
     def toggle_button_text(self, text_field, button):
         if text_field.text == "OFF":
@@ -116,15 +126,18 @@ class HotspotScreen(MDScreen):
         hotspot_password = self.hotspot_password_input.text
 
         hotspot_screen = managers.screen_manager.get_screen('hotspot')
-
         hotspot_name_label = hotspot_screen.ids['hotspot_name']
         hotspot_password_label = hotspot_screen.ids['hotspot_password']
         
         if(hotspot_name != ""):
+            managers.write_to_data(hotspot_name=hotspot_name)
             hotspot_name_label.text = hotspot_name
+
         if(hotspot_password != ""):
+            managers.write_to_data(hotspot_password=hotspot_password)
             hotspot_password_label.text = hotspot_password
         
+
         self.close_dialog()
 
     def close_dialog(self, *args):
