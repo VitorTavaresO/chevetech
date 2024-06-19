@@ -1,10 +1,10 @@
 [
     {
         "connections": {
-            "status": "ON"
+            "status": "OFF"
         },
         "hotspot": {
-            "status": "ON",
+            "status": "OFF",
             "name": "Chevetech",
             "password": "Chevetech"
         }
