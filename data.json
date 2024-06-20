@@ -1,7 +1,7 @@
 [
     {
         "connections": {
-            "status": "OFF"
+            "status": "ON"
         },
         "hotspot": {
             "status": "OFF",
