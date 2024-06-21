@@ -1,12 +1,14 @@
 [
     {
-        "connections": {
-            "status": "ON"
-        },
-        "hotspot": {
-            "status": "OFF",
-            "name": "Chevetech",
-            "password": "Chevetech"
+        "settings_screen": {
+            "connections": {
+                "status": "ON"
+            },
+            "hotspot": {
+                "status": "OFF",
+                "name": "Chevetech",
+                "password": "Duba123"
+            }
         }
     }
 ]
