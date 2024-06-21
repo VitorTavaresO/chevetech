@@ -18,14 +18,14 @@ def write_to_data(**kwargs):
         for key, value in kwargs.items():
             if key.startswith('hotspot_'):
                 field_name = key.split('hotspot_')[1]
-                if field_name in data['hotspot']:
-                    data['hotspot'][field_name] = value
+                if field_name in data['settings_screen']['hotspot']:
+                    data['settings_screen']['hotspot'][field_name] = value
                 else:
                     print(f"Warning: '{field_name}' is not a valid field for 'hotspot'")
             elif key.startswith('connections_'):
                 field_name = key.split('connections_')[1]
-                if field_name in data['connections']:
-                    data['connections'][field_name] = value
+                if field_name in data['settings_screen']['connections']:
+                    data['settings_screen']['connections'][field_name] = value
                 else:
                     print(f"Warning: '{field_name}' is not a valid field for 'connections'")
 
