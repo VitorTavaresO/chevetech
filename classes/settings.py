@@ -29,7 +29,7 @@ class SettingsScreen(MDScreen):
         hotspot_button = self.ids['hotspot_toggle_button']
         hotspot_text = self.ids['hotspot_toggle_text']
         
-        if(data['connections']['status'] == "ON"):
+        if(data['settings_screen']['connections']['status'] == "ON"):
             connection_text.text = "ON"
             connection_button.md_bg_color = (0.118, 0.678, 0.298, 1)
             
@@ -37,7 +37,7 @@ class SettingsScreen(MDScreen):
             connection_text.text = "OFF"
             connection_button.md_bg_color = (0.1, 0.1, 0.1, 1)
         
-        if(data['hotspot']['status'] == "ON"):
+        if(data['settings_screen']['hotspot']['status'] == "ON"):
             hotspot_text.text = "ON"
             hotspot_button.md_bg_color = (0.118, 0.678, 0.298, 1)
         else:
@@ -68,15 +68,15 @@ class HotspotScreen(MDScreen):
         hotspot_name_label = self.ids['hotspot_name']
         hotspot_password_label = self.ids['hotspot_password']
         
-        if data['hotspot']['status'] == "ON":
+        if data['settings_screen']['hotspot']['status'] == "ON":
             hotspot_text.text = "ON"
             hotspot_button.md_bg_color = (0.118, 0.678, 0.298, 1)
         else:
             hotspot_text.text = "OFF"
             hotspot_button.md_bg_color = (0.1, 0.1, 0.1, 1)
 
-        hotspot_name_label.text = data['hotspot']['name']
-        hotspot_password_label.text = data['hotspot']['password']
+        hotspot_name_label.text = data['settings_screen']['hotspot']['name']
+        hotspot_password_label.text = data['settings_screen']['hotspot']['password']
 
     def toggle_button_text(self, card_id, button):
         settings_screen = self.manager.get_screen('settings')
